@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.fin:hover{
+  color:rgb(250, 204, 21);
+  transition: all .5s;
+}
+
+
+.cont-a{
+  transition: all .3s ease-in-out;
+}
+.cont-a:hover{
+  background-color: white;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #facc15; /* Tailwind yellow-400 */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+.remodeling-section {
+  width: 100%;
+}
+
+.remodeling-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.remodeling-image {
+  flex: 1;
+  width: 100%;
+}
+
+.remodeling-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.remodeling-content {
+  padding: 2rem;
+  background-color: #fff;
+  width: 100%;
+}
+
+.remodeling-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.remodeling-content p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.learn-more-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #f9b233;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .remodeling-container {
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  .remodeling-image,
+  .remodeling-content {
+    flex: 1;
+  }
+
+  .remodeling-content {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
